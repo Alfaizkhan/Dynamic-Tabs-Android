@@ -44,11 +44,34 @@
         viewPager.setOffscreenPageLimit(1);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
 #
-##### Note : from the above code, this for() loop is the key to success where we are making dynamic fragments and adding them to tab layout you can make as many dynamic fragments as you want.
+### Note : from the above code, this for() loop is the key to success where we are making dynamic fragments and adding them to tab layout you can make as many dynamic fragments as you want.
 
          for (int k = 0; k <10; k++) {
                     tab.addTab(tab.newTab().setText("" + k));
                 }
+                
+#
+#### 3. Now we need some binding mechanism which can show our dynamically generated fragments on to the UI, here I am using a simple Fragment by the name of DynamicFragment and its addFrag() method. From our TabAdapter I am using getItem() method to pass the position of the dynamically generated fragment and we can get this position easily in the onCreateView() of our fragment
+
+            public class TabAdapter extends FragmentStatePagerAdapter {
+
+            int mNumOfTabs;
+
+            public TabAdapter(FragmentManager fm, int NumOfTabs) {
+                super(fm);
+                this.mNumOfTabs = NumOfTabs;
+            }
+
+            @Override
+            public Fragment getItem(int position) {
+                    return DynamicFragment.addfrag(position);
+            }
+
+            @Override
+            public int getCount() {
+                return mNumOfTabs;
+            }
+        }
 
 
 
