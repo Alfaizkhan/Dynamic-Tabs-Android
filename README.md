@@ -72,9 +72,37 @@
                 return mNumOfTabs;
             }
         }
+        
+#
+#### 4.Get the position of fragments and show it in the Dynamically generated fragment
+
+            public class DynamicFragment extends Fragment {
+                View view;
+                int val;
+                TextView c;
+
+                @Nullable
+                @Override
+                public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle                                  savedInstanceState) {
+                    view = inflater.inflate(R.layout.fragment_dynamic, container, false);
+                    val = getArguments().getInt("someInt", 0);
+                    c = view.findViewById(R.id.c);
+                    c.setText("Fragment - " + val);
+                    return view;
+                }
+                public static DynamicFragment addfrag(int val) {
+                    DynamicFragment fragment = new DynamicFragment();
+                    Bundle args = new Bundle();
+                    args.putInt("someInt", val);
+                    fragment.setArguments(args);
+                    return fragment;
+                }
+            }
+            
+### You're Done 🤘💃 
 
 
 
 
-#### Output:
+#### Output 😍 :
 <img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg1.png" width="360" height="640"> | <img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg2.png" width="360" height="640">
