@@ -2,7 +2,8 @@
 #
 ## 1.In your activity_main.xml make TabLayout
     <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,10 +26,10 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
+        android:layout_height="match_parent">
     </androidx.viewpager.widget.ViewPager>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 #
 #### 2. In your MainActivity find views for TabLayout and do some arrangements for making dynamic tabs
@@ -42,6 +43,12 @@
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(1);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
+#
+##### Note : from the above code, this for() loop is the key to success where we are making dynamic fragments and adding them to tab layout you can make as many dynamic fragments as you want.
+
+         for (int k = 0; k <10; k++) {
+                    tab.addTab(tab.newTab().setText("" + k));
+                }
 
 
 
