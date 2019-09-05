@@ -32,6 +32,5 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(1);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
-
     }
 }
