@@ -1,5 +1,5 @@
 # Dynamic-Tabs-Android
-
+#
 ## 1.In your activity_main.xml make TabLayout
     <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,6 +29,20 @@
        >
     </androidx.viewpager.widget.ViewPager>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+#
+#### 2. In your MainActivity find views for TabLayout and do some arrangements for making dynamic tabs
+
+            for (int k = 0; k <10; k++) {
+            tab.addTab(tab.newTab().setText("" + k));
+        }
+
+        adapter = new TabAdapter
+                (getSupportFragmentManager(), tab.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(1);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
+
 
 
 
