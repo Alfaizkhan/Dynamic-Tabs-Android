@@ -106,4 +106,4 @@
 
 
 #### Output 😍 :
-<img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg1.png" width="270" height="480"> | <img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg2.png" width="270" height="480">
+<img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg1.png" width="240" height="480"> | <img src="https://github.com/Alfaizkhan/Dynamic-Tabs-Android/blob/master/images/frg2.png" width="240" height="480">
